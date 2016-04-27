@@ -1,6 +1,6 @@
 # AVASM - Dataset description
 
-The original dataset is the annotated speech database, part of the [AVASM dataset](http://perception.inrialpes.fr/~Deleforge/AVASM_Dataset/data-10.html).
+The present dataset was adapted from the annotated speech database, part of the [AVASM dataset](http://perception.inrialpes.fr/~Deleforge/AVASM_Dataset/data-10.html). This adaptation is meant to simultaneously perform classification and localization on voice recordings.
 
 The original annotated speech dataset was:
 - manually labeled in `original_data/labels.csv` (0 for male, 1 for female) [1],
@@ -11,7 +11,7 @@ The original annotated speech dataset was:
 
 The obtained features are:
 - in `data/` under an HDF5 file format with their respective labels,
-- in `plotted_data/` as full images.
+- in `plotted_data/` as full images (after having launched `convert.py`).
 
 ------
-[1] The original dataset is not meant for classification and I couldn't come up with anything better for this part.
+[1] The original dataset is not meant for classification and I couldn't come up with anything better for the classification part.
