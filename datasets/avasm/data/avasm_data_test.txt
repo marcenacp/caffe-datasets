@@ -1,2 +1,2 @@
-/mnt/antares_raid/home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_test.h5
+/mnt/antares_raid/home/pierre/masterarbeit/caffe-datasets/datasets/avasm/hdf5/avasm_test.h5
 

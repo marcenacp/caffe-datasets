@@ -1,0 +1,2 @@
+/mnt/antares_raid/home/pierre/masterarbeit/caffe-datasets/datasets/random/data/train.h5
+
