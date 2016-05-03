@@ -1,0 +1,404 @@
+Log file created at: 2016/04/28 14-27-03
+I0428 14:27:03.926681 28705 solver.cpp:48] Initializing solver from parameters: 
+I0428 14:27:03.926735 28705 solver.cpp:91] Creating training net from net file: /home/pierre/masterarbeit/twoears/models/avasm/train_val.prototxt
+I0428 14:27:03.927302 28705 net.cpp:313] The NetState phase (0) differed from the phase (1) specified by a rule in layer data
+I0428 14:27:03.927314 28705 net.cpp:313] The NetState phase (0) differed from the phase (1) specified by a rule in layer data
+I0428 14:27:03.927462 28705 net.cpp:49] Initializing net from parameters: 
+I0428 14:27:03.927520 28705 layer_factory.hpp:77] Creating layer data
+I0428 14:27:03.927536 28705 net.cpp:91] Creating Layer data
+I0428 14:27:03.927544 28705 net.cpp:399] data -> amsFeatures
+I0428 14:27:03.927567 28705 hdf5_data_layer.cpp:79] Loading list of HDF5 filenames from: /home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_train.txt
+I0428 14:27:03.927757 28705 hdf5_data_layer.cpp:93] Number of HDF5 files: 1
+I0428 14:27:03.928472 28705 hdf5.cpp:32] Datatype class: H5T_FLOAT
+I0428 14:27:03.986007 28705 net.cpp:141] Setting up data
+I0428 14:27:03.986053 28705 net.cpp:148] Top shape: 16 1 513 105 (861840)
+I0428 14:27:03.986059 28705 net.cpp:156] Memory required for data: 3447360
+I0428 14:27:03.986075 28705 layer_factory.hpp:77] Creating layer data
+I0428 14:27:03.986099 28705 net.cpp:91] Creating Layer data
+I0428 14:27:03.986107 28705 net.cpp:399] data -> label
+I0428 14:27:03.986127 28705 hdf5_data_layer.cpp:79] Loading list of HDF5 filenames from: /home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_train.txt
+I0428 14:27:03.986363 28705 hdf5_data_layer.cpp:93] Number of HDF5 files: 1
+I0428 14:27:03.987857 28705 net.cpp:141] Setting up data
+I0428 14:27:03.987874 28705 net.cpp:148] Top shape: 16 2 (32)
+I0428 14:27:03.987879 28705 net.cpp:156] Memory required for data: 3447488
+I0428 14:27:03.987884 28705 layer_factory.hpp:77] Creating layer conv1
+I0428 14:27:03.987910 28705 net.cpp:91] Creating Layer conv1
+I0428 14:27:03.987915 28705 net.cpp:425] conv1 <- amsFeatures
+I0428 14:27:03.987925 28705 net.cpp:399] conv1 -> conv1
+I0428 14:27:03.989236 28705 net.cpp:141] Setting up conv1
+I0428 14:27:03.989251 28705 net.cpp:148] Top shape: 16 75 253 49 (14876400)
+I0428 14:27:03.989255 28705 net.cpp:156] Memory required for data: 62953088
+I0428 14:27:03.989276 28705 layer_factory.hpp:77] Creating layer relu1
+I0428 14:27:03.989285 28705 net.cpp:91] Creating Layer relu1
+I0428 14:27:03.989290 28705 net.cpp:425] relu1 <- conv1
+I0428 14:27:03.989297 28705 net.cpp:386] relu1 -> conv1 (in-place)
+I0428 14:27:03.989307 28705 net.cpp:141] Setting up relu1
+I0428 14:27:03.989313 28705 net.cpp:148] Top shape: 16 75 253 49 (14876400)
+I0428 14:27:03.989316 28705 net.cpp:156] Memory required for data: 122458688
+I0428 14:27:03.989320 28705 layer_factory.hpp:77] Creating layer pool1
+I0428 14:27:03.989328 28705 net.cpp:91] Creating Layer pool1
+I0428 14:27:03.989332 28705 net.cpp:425] pool1 <- conv1
+I0428 14:27:03.989338 28705 net.cpp:399] pool1 -> pool1
+I0428 14:27:03.989384 28705 net.cpp:141] Setting up pool1
+I0428 14:27:03.989392 28705 net.cpp:148] Top shape: 16 75 127 25 (3810000)
+I0428 14:27:03.989395 28705 net.cpp:156] Memory required for data: 137698688
+I0428 14:27:03.989399 28705 layer_factory.hpp:77] Creating layer conv2
+I0428 14:27:03.989410 28705 net.cpp:91] Creating Layer conv2
+I0428 14:27:03.989414 28705 net.cpp:425] conv2 <- pool1
+I0428 14:27:03.989421 28705 net.cpp:399] conv2 -> conv2
+I0428 14:27:03.991083 28705 net.cpp:141] Setting up conv2
+I0428 14:27:03.991101 28705 net.cpp:148] Top shape: 16 64 125 23 (2944000)
+I0428 14:27:03.991106 28705 net.cpp:156] Memory required for data: 149474688
+I0428 14:27:03.991117 28705 layer_factory.hpp:77] Creating layer pool2
+I0428 14:27:03.991127 28705 net.cpp:91] Creating Layer pool2
+I0428 14:27:03.991132 28705 net.cpp:425] pool2 <- conv2
+I0428 14:27:03.991138 28705 net.cpp:399] pool2 -> pool2
+I0428 14:27:03.991186 28705 net.cpp:141] Setting up pool2
+I0428 14:27:03.991194 28705 net.cpp:148] Top shape: 16 64 63 12 (774144)
+I0428 14:27:03.991197 28705 net.cpp:156] Memory required for data: 152571264
+I0428 14:27:03.991201 28705 layer_factory.hpp:77] Creating layer relu2
+I0428 14:27:03.991207 28705 net.cpp:91] Creating Layer relu2
+I0428 14:27:03.991210 28705 net.cpp:425] relu2 <- pool2
+I0428 14:27:03.991215 28705 net.cpp:386] relu2 -> pool2 (in-place)
+I0428 14:27:03.991222 28705 net.cpp:141] Setting up relu2
+I0428 14:27:03.991227 28705 net.cpp:148] Top shape: 16 64 63 12 (774144)
+I0428 14:27:03.991230 28705 net.cpp:156] Memory required for data: 155667840
+I0428 14:27:03.991233 28705 layer_factory.hpp:77] Creating layer ip2
+I0428 14:27:03.991248 28705 net.cpp:91] Creating Layer ip2
+I0428 14:27:03.991251 28705 net.cpp:425] ip2 <- pool2
+I0428 14:27:03.991257 28705 net.cpp:399] ip2 -> ip2
+I0428 14:27:04.065780 28705 net.cpp:141] Setting up ip2
+I0428 14:27:04.065820 28705 net.cpp:148] Top shape: 16 128 (2048)
+I0428 14:27:04.065825 28705 net.cpp:156] Memory required for data: 155676032
+I0428 14:27:04.065845 28705 layer_factory.hpp:77] Creating layer relu2
+I0428 14:27:04.065858 28705 net.cpp:91] Creating Layer relu2
+I0428 14:27:04.065865 28705 net.cpp:425] relu2 <- ip2
+I0428 14:27:04.065873 28705 net.cpp:386] relu2 -> ip2 (in-place)
+I0428 14:27:04.065889 28705 net.cpp:141] Setting up relu2
+I0428 14:27:04.065894 28705 net.cpp:148] Top shape: 16 128 (2048)
+I0428 14:27:04.065898 28705 net.cpp:156] Memory required for data: 155684224
+I0428 14:27:04.065901 28705 layer_factory.hpp:77] Creating layer dropip2
+I0428 14:27:04.065920 28705 net.cpp:91] Creating Layer dropip2
+I0428 14:27:04.065924 28705 net.cpp:425] dropip2 <- ip2
+I0428 14:27:04.065930 28705 net.cpp:386] dropip2 -> ip2 (in-place)
+I0428 14:27:04.065963 28705 net.cpp:141] Setting up dropip2
+I0428 14:27:04.065970 28705 net.cpp:148] Top shape: 16 128 (2048)
+I0428 14:27:04.065973 28705 net.cpp:156] Memory required for data: 155692416
+I0428 14:27:04.065978 28705 layer_factory.hpp:77] Creating layer score
+I0428 14:27:04.065987 28705 net.cpp:91] Creating Layer score
+I0428 14:27:04.065992 28705 net.cpp:425] score <- ip2
+I0428 14:27:04.065999 28705 net.cpp:399] score -> score
+I0428 14:27:04.066104 28705 net.cpp:141] Setting up score
+I0428 14:27:04.066112 28705 net.cpp:148] Top shape: 16 2 (32)
+I0428 14:27:04.066117 28705 net.cpp:156] Memory required for data: 155692544
+I0428 14:27:04.066123 28705 layer_factory.hpp:77] Creating layer loss
+I0428 14:27:04.066135 28705 net.cpp:91] Creating Layer loss
+I0428 14:27:04.066140 28705 net.cpp:425] loss <- score
+I0428 14:27:04.066145 28705 net.cpp:425] loss <- label
+I0428 14:27:04.066151 28705 net.cpp:399] loss -> loss
+I0428 14:27:04.066200 28705 net.cpp:141] Setting up loss
+I0428 14:27:04.066210 28705 net.cpp:148] Top shape: (1)
+I0428 14:27:04.066212 28705 net.cpp:151]     with loss weight 1
+I0428 14:27:04.066234 28705 net.cpp:156] Memory required for data: 155692548
+I0428 14:27:04.066239 28705 net.cpp:217] loss needs backward computation.
+I0428 14:27:04.066243 28705 net.cpp:217] score needs backward computation.
+I0428 14:27:04.066248 28705 net.cpp:217] dropip2 needs backward computation.
+I0428 14:27:04.066251 28705 net.cpp:217] relu2 needs backward computation.
+I0428 14:27:04.066256 28705 net.cpp:217] ip2 needs backward computation.
+I0428 14:27:04.066258 28705 net.cpp:217] relu2 needs backward computation.
+I0428 14:27:04.066262 28705 net.cpp:217] pool2 needs backward computation.
+I0428 14:27:04.066267 28705 net.cpp:217] conv2 needs backward computation.
+I0428 14:27:04.066270 28705 net.cpp:217] pool1 needs backward computation.
+I0428 14:27:04.066273 28705 net.cpp:217] relu1 needs backward computation.
+I0428 14:27:04.066277 28705 net.cpp:217] conv1 needs backward computation.
+I0428 14:27:04.066282 28705 net.cpp:219] data does not need backward computation.
+I0428 14:27:04.066284 28705 net.cpp:219] data does not need backward computation.
+I0428 14:27:04.066287 28705 net.cpp:261] This network produces output loss
+I0428 14:27:04.066298 28705 net.cpp:274] Network initialization done.
+I0428 14:27:04.066887 28705 solver.cpp:181] Creating test net (#0) specified by net file: /home/pierre/masterarbeit/twoears/models/avasm/train_val.prototxt
+I0428 14:27:04.066923 28705 net.cpp:313] The NetState phase (1) differed from the phase (0) specified by a rule in layer data
+I0428 14:27:04.066934 28705 net.cpp:313] The NetState phase (1) differed from the phase (0) specified by a rule in layer data
+I0428 14:27:04.067109 28705 net.cpp:49] Initializing net from parameters: 
+I0428 14:27:04.067172 28705 layer_factory.hpp:77] Creating layer data
+I0428 14:27:04.067181 28705 net.cpp:91] Creating Layer data
+I0428 14:27:04.067186 28705 net.cpp:399] data -> amsFeatures
+I0428 14:27:04.067195 28705 hdf5_data_layer.cpp:79] Loading list of HDF5 filenames from: /home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_test.txt
+I0428 14:27:04.067322 28705 hdf5_data_layer.cpp:93] Number of HDF5 files: 1
+I0428 14:27:04.083176 28705 net.cpp:141] Setting up data
+I0428 14:27:04.083220 28705 net.cpp:148] Top shape: 16 1 513 105 (861840)
+I0428 14:27:04.083230 28705 net.cpp:156] Memory required for data: 3447360
+I0428 14:27:04.083245 28705 layer_factory.hpp:77] Creating layer data
+I0428 14:27:04.083269 28705 net.cpp:91] Creating Layer data
+I0428 14:27:04.083282 28705 net.cpp:399] data -> label
+I0428 14:27:04.083307 28705 hdf5_data_layer.cpp:79] Loading list of HDF5 filenames from: /home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_test.txt
+I0428 14:27:04.083534 28705 hdf5_data_layer.cpp:93] Number of HDF5 files: 1
+I0428 14:27:04.084210 28705 net.cpp:141] Setting up data
+I0428 14:27:04.084226 28705 net.cpp:148] Top shape: 16 2 (32)
+I0428 14:27:04.084233 28705 net.cpp:156] Memory required for data: 3447488
+I0428 14:27:04.084240 28705 layer_factory.hpp:77] Creating layer conv1
+I0428 14:27:04.084264 28705 net.cpp:91] Creating Layer conv1
+I0428 14:27:04.084270 28705 net.cpp:425] conv1 <- amsFeatures
+I0428 14:27:04.084281 28705 net.cpp:399] conv1 -> conv1
+I0428 14:27:04.084766 28705 net.cpp:141] Setting up conv1
+I0428 14:27:04.084785 28705 net.cpp:148] Top shape: 16 75 253 49 (14876400)
+I0428 14:27:04.084791 28705 net.cpp:156] Memory required for data: 62953088
+I0428 14:27:04.084808 28705 layer_factory.hpp:77] Creating layer relu1
+I0428 14:27:04.084820 28705 net.cpp:91] Creating Layer relu1
+I0428 14:27:04.084825 28705 net.cpp:425] relu1 <- conv1
+I0428 14:27:04.084833 28705 net.cpp:386] relu1 -> conv1 (in-place)
+I0428 14:27:04.084843 28705 net.cpp:141] Setting up relu1
+I0428 14:27:04.084851 28705 net.cpp:148] Top shape: 16 75 253 49 (14876400)
+I0428 14:27:04.084856 28705 net.cpp:156] Memory required for data: 122458688
+I0428 14:27:04.084861 28705 layer_factory.hpp:77] Creating layer pool1
+I0428 14:27:04.084873 28705 net.cpp:91] Creating Layer pool1
+I0428 14:27:04.084880 28705 net.cpp:425] pool1 <- conv1
+I0428 14:27:04.084890 28705 net.cpp:399] pool1 -> pool1
+I0428 14:27:04.084955 28705 net.cpp:141] Setting up pool1
+I0428 14:27:04.084969 28705 net.cpp:148] Top shape: 16 75 127 25 (3810000)
+I0428 14:27:04.084975 28705 net.cpp:156] Memory required for data: 137698688
+I0428 14:27:04.084981 28705 layer_factory.hpp:77] Creating layer conv2
+I0428 14:27:04.084996 28705 net.cpp:91] Creating Layer conv2
+I0428 14:27:04.085003 28705 net.cpp:425] conv2 <- pool1
+I0428 14:27:04.085014 28705 net.cpp:399] conv2 -> conv2
+I0428 14:27:04.085957 28705 net.cpp:141] Setting up conv2
+I0428 14:27:04.085971 28705 net.cpp:148] Top shape: 16 64 125 23 (2944000)
+I0428 14:27:04.085978 28705 net.cpp:156] Memory required for data: 149474688
+I0428 14:27:04.085991 28705 layer_factory.hpp:77] Creating layer pool2
+I0428 14:27:04.086001 28705 net.cpp:91] Creating Layer pool2
+I0428 14:27:04.086009 28705 net.cpp:425] pool2 <- conv2
+I0428 14:27:04.086019 28705 net.cpp:399] pool2 -> pool2
+I0428 14:27:04.086084 28705 net.cpp:141] Setting up pool2
+I0428 14:27:04.086099 28705 net.cpp:148] Top shape: 16 64 63 12 (774144)
+I0428 14:27:04.086107 28705 net.cpp:156] Memory required for data: 152571264
+I0428 14:27:04.086112 28705 layer_factory.hpp:77] Creating layer relu2
+I0428 14:27:04.086122 28705 net.cpp:91] Creating Layer relu2
+I0428 14:27:04.086128 28705 net.cpp:425] relu2 <- pool2
+I0428 14:27:04.086138 28705 net.cpp:386] relu2 -> pool2 (in-place)
+I0428 14:27:04.086148 28705 net.cpp:141] Setting up relu2
+I0428 14:27:04.086156 28705 net.cpp:148] Top shape: 16 64 63 12 (774144)
+I0428 14:27:04.086161 28705 net.cpp:156] Memory required for data: 155667840
+I0428 14:27:04.086168 28705 layer_factory.hpp:77] Creating layer ip2
+I0428 14:27:04.086181 28705 net.cpp:91] Creating Layer ip2
+I0428 14:27:04.086187 28705 net.cpp:425] ip2 <- pool2
+I0428 14:27:04.086197 28705 net.cpp:399] ip2 -> ip2
+I0428 14:27:04.165009 28705 net.cpp:141] Setting up ip2
+I0428 14:27:04.165050 28705 net.cpp:148] Top shape: 16 128 (2048)
+I0428 14:27:04.165056 28705 net.cpp:156] Memory required for data: 155676032
+I0428 14:27:04.165082 28705 layer_factory.hpp:77] Creating layer relu2
+I0428 14:27:04.165099 28705 net.cpp:91] Creating Layer relu2
+I0428 14:27:04.165108 28705 net.cpp:425] relu2 <- ip2
+I0428 14:27:04.165120 28705 net.cpp:386] relu2 -> ip2 (in-place)
+I0428 14:27:04.165135 28705 net.cpp:141] Setting up relu2
+I0428 14:27:04.165144 28705 net.cpp:148] Top shape: 16 128 (2048)
+I0428 14:27:04.165150 28705 net.cpp:156] Memory required for data: 155684224
+I0428 14:27:04.165156 28705 layer_factory.hpp:77] Creating layer dropip2
+I0428 14:27:04.165169 28705 net.cpp:91] Creating Layer dropip2
+I0428 14:27:04.165174 28705 net.cpp:425] dropip2 <- ip2
+I0428 14:27:04.165184 28705 net.cpp:386] dropip2 -> ip2 (in-place)
+I0428 14:27:04.165223 28705 net.cpp:141] Setting up dropip2
+I0428 14:27:04.165235 28705 net.cpp:148] Top shape: 16 128 (2048)
+I0428 14:27:04.165241 28705 net.cpp:156] Memory required for data: 155692416
+I0428 14:27:04.165246 28705 layer_factory.hpp:77] Creating layer score
+I0428 14:27:04.165261 28705 net.cpp:91] Creating Layer score
+I0428 14:27:04.165267 28705 net.cpp:425] score <- ip2
+I0428 14:27:04.165278 28705 net.cpp:399] score -> score
+I0428 14:27:04.165434 28705 net.cpp:141] Setting up score
+I0428 14:27:04.165452 28705 net.cpp:148] Top shape: 16 2 (32)
+I0428 14:27:04.165458 28705 net.cpp:156] Memory required for data: 155692544
+I0428 14:27:04.165472 28705 layer_factory.hpp:77] Creating layer loss
+I0428 14:27:04.165488 28705 net.cpp:91] Creating Layer loss
+I0428 14:27:04.165496 28705 net.cpp:425] loss <- score
+I0428 14:27:04.165504 28705 net.cpp:425] loss <- label
+I0428 14:27:04.165514 28705 net.cpp:399] loss -> loss
+I0428 14:27:04.165585 28705 net.cpp:141] Setting up loss
+I0428 14:27:04.165601 28705 net.cpp:148] Top shape: (1)
+I0428 14:27:04.165608 28705 net.cpp:151]     with loss weight 1
+I0428 14:27:04.165628 28705 net.cpp:156] Memory required for data: 155692548
+I0428 14:27:04.165638 28705 net.cpp:217] loss needs backward computation.
+I0428 14:27:04.165645 28705 net.cpp:217] score needs backward computation.
+I0428 14:27:04.165652 28705 net.cpp:217] dropip2 needs backward computation.
+I0428 14:27:04.165657 28705 net.cpp:217] relu2 needs backward computation.
+I0428 14:27:04.165663 28705 net.cpp:217] ip2 needs backward computation.
+I0428 14:27:04.165669 28705 net.cpp:217] relu2 needs backward computation.
+I0428 14:27:04.165675 28705 net.cpp:217] pool2 needs backward computation.
+I0428 14:27:04.165681 28705 net.cpp:217] conv2 needs backward computation.
+I0428 14:27:04.165688 28705 net.cpp:217] pool1 needs backward computation.
+I0428 14:27:04.165693 28705 net.cpp:217] relu1 needs backward computation.
+I0428 14:27:04.165699 28705 net.cpp:217] conv1 needs backward computation.
+I0428 14:27:04.165704 28705 net.cpp:219] data does not need backward computation.
+I0428 14:27:04.165709 28705 net.cpp:219] data does not need backward computation.
+I0428 14:27:04.165714 28705 net.cpp:261] This network produces output loss
+I0428 14:27:04.165726 28705 net.cpp:274] Network initialization done.
+I0428 14:27:04.165802 28705 solver.cpp:60] Solver scaffolding done.
+I0428 14:27:04.166470  0000 main.py:00] Solving
+I0428 14:27:04.167347 28705 solver.cpp:337] Iteration 0, Testing net (#0)
+I0428 14:27:04.213716 28705 solver.cpp:404]     Test net output #0: loss = 1.39221 (* 1 = 1.39221 loss)
+I0428 14:27:04.243139 28705 solver.cpp:228] Iteration 0, loss = 1.34586
+I0428 14:27:04.243170 28705 solver.cpp:244]     Train net output #0: loss = 1.34586 (* 1 = 1.34586 loss)
+I0428 14:27:04.243186 28705 sgd_solver.cpp:106] Iteration 0, lr = 0.01
+I0428 14:27:04.320543  0000 main.py:00] Test net output #1: accuracy = 0.4
+I0428 14:27:04.651383 28705 solver.cpp:337] Iteration 4, Testing net (#0)
+I0428 14:27:04.735286 28705 solver.cpp:404]     Test net output #0: loss = 1.4106 (* 1 = 1.4106 loss)
+I0428 14:27:04.830509  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:04.988194 28705 solver.cpp:337] Iteration 8, Testing net (#0)
+I0428 14:27:05.072165 28705 solver.cpp:404]     Test net output #0: loss = 1.3985 (* 1 = 1.3985 loss)
+I0428 14:27:05.166178  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:05.323654 28705 solver.cpp:337] Iteration 12, Testing net (#0)
+I0428 14:27:05.407433 28705 solver.cpp:404]     Test net output #0: loss = 1.39774 (* 1 = 1.39774 loss)
+I0428 14:27:05.502666  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:05.660393 28705 solver.cpp:337] Iteration 16, Testing net (#0)
+I0428 14:27:05.744246 28705 solver.cpp:404]     Test net output #0: loss = 1.38482 (* 1 = 1.38482 loss)
+I0428 14:27:05.839652  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:05.996660 28705 solver.cpp:337] Iteration 20, Testing net (#0)
+I0428 14:27:06.081244 28705 solver.cpp:404]     Test net output #0: loss = 1.38676 (* 1 = 1.38676 loss)
+I0428 14:27:06.173799  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:06.330487 28705 solver.cpp:337] Iteration 24, Testing net (#0)
+I0428 14:27:06.415143 28705 solver.cpp:404]     Test net output #0: loss = 1.35438 (* 1 = 1.35438 loss)
+I0428 14:27:06.506776  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:06.663429 28705 solver.cpp:337] Iteration 28, Testing net (#0)
+I0428 14:27:06.748122 28705 solver.cpp:404]     Test net output #0: loss = 1.34475 (* 1 = 1.34475 loss)
+I0428 14:27:06.842032  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:06.998728 28705 solver.cpp:337] Iteration 32, Testing net (#0)
+I0428 14:27:07.083714 28705 solver.cpp:404]     Test net output #0: loss = 1.39102 (* 1 = 1.39102 loss)
+I0428 14:27:07.176876  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:07.333673 28705 solver.cpp:337] Iteration 36, Testing net (#0)
+I0428 14:27:07.418493 28705 solver.cpp:404]     Test net output #0: loss = 1.39217 (* 1 = 1.39217 loss)
+I0428 14:27:07.512847  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:07.670759 28705 solver.cpp:337] Iteration 40, Testing net (#0)
+I0428 14:27:07.754580 28705 solver.cpp:404]     Test net output #0: loss = 1.32726 (* 1 = 1.32726 loss)
+I0428 14:27:07.848915  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:08.005473 28705 solver.cpp:337] Iteration 44, Testing net (#0)
+I0428 14:27:08.090211 28705 solver.cpp:404]     Test net output #0: loss = 1.3378 (* 1 = 1.3378 loss)
+I0428 14:27:08.181179  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:08.338819 28705 solver.cpp:337] Iteration 48, Testing net (#0)
+I0428 14:27:08.422410 28705 solver.cpp:404]     Test net output #0: loss = 1.35895 (* 1 = 1.35895 loss)
+I0428 14:27:08.516515  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:08.674443 28705 solver.cpp:337] Iteration 52, Testing net (#0)
+I0428 14:27:08.758254 28705 solver.cpp:404]     Test net output #0: loss = 1.38327 (* 1 = 1.38327 loss)
+I0428 14:27:08.851982  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:09.008714 28705 solver.cpp:337] Iteration 56, Testing net (#0)
+I0428 14:27:09.093451 28705 solver.cpp:404]     Test net output #0: loss = 1.38313 (* 1 = 1.38313 loss)
+I0428 14:27:09.184593  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:09.341383 28705 solver.cpp:337] Iteration 60, Testing net (#0)
+I0428 14:27:09.426199 28705 solver.cpp:404]     Test net output #0: loss = 1.35806 (* 1 = 1.35806 loss)
+I0428 14:27:09.517416  0000 main.py:00] Test net output #1: accuracy = 0.0
+I0428 14:27:09.676280 28705 solver.cpp:337] Iteration 64, Testing net (#0)
+I0428 14:27:09.759639 28705 solver.cpp:404]     Test net output #0: loss = 1.14972 (* 1 = 1.14972 loss)
+I0428 14:27:09.854792  0000 main.py:00] Test net output #1: accuracy = 0.136363636364
+I0428 14:27:10.012679 28705 solver.cpp:337] Iteration 68, Testing net (#0)
+I0428 14:27:10.096361 28705 solver.cpp:404]     Test net output #0: loss = 1.17957 (* 1 = 1.17957 loss)
+I0428 14:27:10.187885  0000 main.py:00] Test net output #1: accuracy = 0.566666666667
+I0428 14:27:10.344640 28705 solver.cpp:337] Iteration 72, Testing net (#0)
+I0428 14:27:10.429312 28705 solver.cpp:404]     Test net output #0: loss = 1.59689 (* 1 = 1.59689 loss)
+I0428 14:27:10.520672  0000 main.py:00] Test net output #1: accuracy = 0.766666666667
+I0428 14:27:10.677925 28705 solver.cpp:337] Iteration 76, Testing net (#0)
+I0428 14:27:10.762073 28705 solver.cpp:404]     Test net output #0: loss = 1.67853 (* 1 = 1.67853 loss)
+I0428 14:27:10.856199  0000 main.py:00] Test net output #1: accuracy = 0.4
+I0428 14:27:11.012833 28705 solver.cpp:337] Iteration 80, Testing net (#0)
+I0428 14:27:11.097640 28705 solver.cpp:404]     Test net output #0: loss = 0.872949 (* 1 = 0.872949 loss)
+I0428 14:27:11.189147  0000 main.py:00] Test net output #1: accuracy = 0.390909090909
+I0428 14:27:11.345468 28705 solver.cpp:337] Iteration 84, Testing net (#0)
+I0428 14:27:11.430306 28705 solver.cpp:404]     Test net output #0: loss = 1.19264 (* 1 = 1.19264 loss)
+I0428 14:27:11.521681  0000 main.py:00] Test net output #1: accuracy = 0.583333333333
+I0428 14:27:11.678508 28705 solver.cpp:337] Iteration 88, Testing net (#0)
+I0428 14:27:11.763305 28705 solver.cpp:404]     Test net output #0: loss = 1.36654 (* 1 = 1.36654 loss)
+I0428 14:27:11.854902  0000 main.py:00] Test net output #1: accuracy = 0.7
+I0428 14:27:12.012619 28705 solver.cpp:337] Iteration 92, Testing net (#0)
+I0428 14:27:12.096297 28705 solver.cpp:404]     Test net output #0: loss = 1.23639 (* 1 = 1.23639 loss)
+I0428 14:27:12.190254  0000 main.py:00] Test net output #1: accuracy = 0.516666666667
+I0428 14:27:12.347728 28705 solver.cpp:337] Iteration 96, Testing net (#0)
+I0428 14:27:12.431684 28705 solver.cpp:404]     Test net output #0: loss = 0.984242 (* 1 = 0.984242 loss)
+I0428 14:27:12.525078  0000 main.py:00] Test net output #1: accuracy = 0.136363636364
+I0428 14:27:12.682823 28705 solver.cpp:337] Iteration 100, Testing net (#0)
+I0428 14:27:12.766705 28705 solver.cpp:404]     Test net output #0: loss = 1.14407 (* 1 = 1.14407 loss)
+I0428 14:27:12.786082 28705 solver.cpp:228] Iteration 100, loss = 0.363499
+I0428 14:27:12.786110 28705 solver.cpp:244]     Train net output #0: loss = 0.363499 (* 1 = 0.363499 loss)
+I0428 14:27:12.786121 28705 sgd_solver.cpp:106] Iteration 100, lr = 0.01
+I0428 14:27:12.858516  0000 main.py:00] Test net output #1: accuracy = 0.783333333333
+I0428 14:27:13.015128 28705 solver.cpp:337] Iteration 104, Testing net (#0)
+I0428 14:27:13.099725 28705 solver.cpp:404]     Test net output #0: loss = 1.71687 (* 1 = 1.71687 loss)
+I0428 14:27:13.193162  0000 main.py:00] Test net output #1: accuracy = 0.633333333333
+I0428 14:27:13.350836 28705 solver.cpp:337] Iteration 108, Testing net (#0)
+I0428 14:27:13.434669 28705 solver.cpp:404]     Test net output #0: loss = 3.4692 (* 1 = 3.4692 loss)
+I0428 14:27:13.528116  0000 main.py:00] Test net output #1: accuracy = 0.5
+I0428 14:27:13.686025 28705 solver.cpp:337] Iteration 112, Testing net (#0)
+I0428 14:27:13.769486 28705 solver.cpp:404]     Test net output #0: loss = 1.23252 (* 1 = 1.23252 loss)
+I0428 14:27:13.860905  0000 main.py:00] Test net output #1: accuracy = 0.590909090909
+I0428 14:27:14.017772 28705 solver.cpp:337] Iteration 116, Testing net (#0)
+I0428 14:27:14.102519 28705 solver.cpp:404]     Test net output #0: loss = 1.62516 (* 1 = 1.62516 loss)
+I0428 14:27:14.194329  0000 main.py:00] Test net output #1: accuracy = 0.7
+I0428 14:27:14.350816 28705 solver.cpp:337] Iteration 120, Testing net (#0)
+I0428 14:27:14.435715 28705 solver.cpp:404]     Test net output #0: loss = 1.29446 (* 1 = 1.29446 loss)
+I0428 14:27:14.527185  0000 main.py:00] Test net output #1: accuracy = 0.316666666667
+I0428 14:27:14.685122 28705 solver.cpp:337] Iteration 124, Testing net (#0)
+I0428 14:27:14.768903 28705 solver.cpp:404]     Test net output #0: loss = 1.58965 (* 1 = 1.58965 loss)
+I0428 14:27:14.860496  0000 main.py:00] Test net output #1: accuracy = 0.433333333333
+I0428 14:27:15.017143 28705 solver.cpp:337] Iteration 128, Testing net (#0)
+I0428 14:27:15.101799 28705 solver.cpp:404]     Test net output #0: loss = 1.16663 (* 1 = 1.16663 loss)
+I0428 14:27:15.193078  0000 main.py:00] Test net output #1: accuracy = 0.290909090909
+I0428 14:27:15.350433 28705 solver.cpp:337] Iteration 132, Testing net (#0)
+I0428 14:27:15.434372 28705 solver.cpp:404]     Test net output #0: loss = 1.29744 (* 1 = 1.29744 loss)
+I0428 14:27:15.528287  0000 main.py:00] Test net output #1: accuracy = 0.15
+I0428 14:27:15.685982 28705 solver.cpp:337] Iteration 136, Testing net (#0)
+I0428 14:27:15.770010 28705 solver.cpp:404]     Test net output #0: loss = 1.31495 (* 1 = 1.31495 loss)
+I0428 14:27:15.861711  0000 main.py:00] Test net output #1: accuracy = 0.166666666667
+I0428 14:27:16.018128 28705 solver.cpp:337] Iteration 140, Testing net (#0)
+I0428 14:27:16.102782 28705 solver.cpp:404]     Test net output #0: loss = 1.70185 (* 1 = 1.70185 loss)
+I0428 14:27:16.194207  0000 main.py:00] Test net output #1: accuracy = 0.416666666667
+I0428 14:27:16.351995 28705 solver.cpp:337] Iteration 144, Testing net (#0)
+I0428 14:27:16.435642 28705 solver.cpp:404]     Test net output #0: loss = 1.64806 (* 1 = 1.64806 loss)
+I0428 14:27:16.527539  0000 main.py:00] Test net output #1: accuracy = 0.436363636364
+I0428 14:27:16.685266 28705 solver.cpp:337] Iteration 148, Testing net (#0)
+I0428 14:27:16.769104 28705 solver.cpp:404]     Test net output #0: loss = 2.16915 (* 1 = 2.16915 loss)
+I0428 14:27:16.863347  0000 main.py:00] Test net output #1: accuracy = 0.65
+I0428 14:27:17.020215 28705 solver.cpp:337] Iteration 152, Testing net (#0)
+I0428 14:27:17.104775 28705 solver.cpp:404]     Test net output #0: loss = 3.2154 (* 1 = 3.2154 loss)
+I0428 14:27:17.197678  0000 main.py:00] Test net output #1: accuracy = 0.483333333333
+I0428 14:27:17.354310 28705 solver.cpp:337] Iteration 156, Testing net (#0)
+I0428 14:27:17.439131 28705 solver.cpp:404]     Test net output #0: loss = 2.23825 (* 1 = 2.23825 loss)
+I0428 14:27:17.530528  0000 main.py:00] Test net output #1: accuracy = 0.683333333333
+I0428 14:27:17.687820 28705 solver.cpp:337] Iteration 160, Testing net (#0)
+I0428 14:27:17.772063 28705 solver.cpp:404]     Test net output #0: loss = 1.24268 (* 1 = 1.24268 loss)
+I0428 14:27:17.866492  0000 main.py:00] Test net output #1: accuracy = 0.445454545455
+I0428 14:27:18.023288 28705 solver.cpp:337] Iteration 164, Testing net (#0)
+I0428 14:27:18.107820 28705 solver.cpp:404]     Test net output #0: loss = 1.26876 (* 1 = 1.26876 loss)
+I0428 14:27:18.199248  0000 main.py:00] Test net output #1: accuracy = 0.533333333333
+I0428 14:27:18.356802 28705 solver.cpp:337] Iteration 168, Testing net (#0)
+I0428 14:27:18.440678 28705 solver.cpp:404]     Test net output #0: loss = 1.55092 (* 1 = 1.55092 loss)
+I0428 14:27:18.533401  0000 main.py:00] Test net output #1: accuracy = 0.4
+I0428 14:27:18.691335 28705 solver.cpp:337] Iteration 172, Testing net (#0)
+I0428 14:27:18.774750 28705 solver.cpp:404]     Test net output #0: loss = 1.70368 (* 1 = 1.70368 loss)
+I0428 14:27:18.867041  0000 main.py:00] Test net output #1: accuracy = 0.666666666667
+I0428 14:27:19.023794 28705 solver.cpp:337] Iteration 176, Testing net (#0)
+I0428 14:27:19.108311 28705 solver.cpp:404]     Test net output #0: loss = 2.07487 (* 1 = 2.07487 loss)
+I0428 14:27:19.202671  0000 main.py:00] Test net output #1: accuracy = 0.427272727273
+I0428 14:27:19.359774 28705 solver.cpp:337] Iteration 180, Testing net (#0)
+I0428 14:27:19.444247 28705 solver.cpp:404]     Test net output #0: loss = 1.61537 (* 1 = 1.61537 loss)
+I0428 14:27:19.535881  0000 main.py:00] Test net output #1: accuracy = 0.583333333333
+I0428 14:27:19.693892 28705 solver.cpp:337] Iteration 184, Testing net (#0)
+I0428 14:27:19.777595 28705 solver.cpp:404]     Test net output #0: loss = 1.67365 (* 1 = 1.67365 loss)
+I0428 14:27:19.869020  0000 main.py:00] Test net output #1: accuracy = 0.566666666667
+I0428 14:27:20.025395 28705 solver.cpp:337] Iteration 188, Testing net (#0)
+I0428 14:27:20.110160 28705 solver.cpp:404]     Test net output #0: loss = 1.97372 (* 1 = 1.97372 loss)
+I0428 14:27:20.204641  0000 main.py:00] Test net output #1: accuracy = 0.666666666667
+I0428 14:27:20.362309 28705 solver.cpp:337] Iteration 192, Testing net (#0)
+I0428 14:27:20.446053 28705 solver.cpp:404]     Test net output #0: loss = 2.43779 (* 1 = 2.43779 loss)
+I0428 14:27:20.537297  0000 main.py:00] Test net output #1: accuracy = 0.527272727273
+I0428 14:27:20.695204 28705 solver.cpp:337] Iteration 196, Testing net (#0)
+I0428 14:27:20.778977 28705 solver.cpp:404]     Test net output #0: loss = 1.94966 (* 1 = 1.94966 loss)
+I0428 14:27:20.870898  0000 main.py:00] Test net output #1: accuracy = 0.6
+I0428 14:27:21.027870 28705 solver.cpp:337] Iteration 200, Testing net (#0)
+I0428 14:27:21.112274 28705 solver.cpp:404]     Test net output #0: loss = 2.32195 (* 1 = 2.32195 loss)
+I0428 14:27:21.131539 28705 solver.cpp:228] Iteration 200, loss = 0.564834
+I0428 14:27:21.131566 28705 solver.cpp:244]     Train net output #0: loss = 0.564834 (* 1 = 0.564834 loss)
+I0428 14:27:21.131577 28705 sgd_solver.cpp:106] Iteration 200, lr = 0.01
+I0428 14:27:21.203702  0000 main.py:00] Test net output #1: accuracy = 0.483333333333
+I0428 14:27:21.361297 28705 solver.cpp:337] Iteration 204, Testing net (#0)
+I0428 14:27:21.445032 28705 solver.cpp:404]     Test net output #0: loss = 2.30865 (* 1 = 2.30865 loss)
+I0428 14:27:21.536439  0000 main.py:00] Test net output #1: accuracy = 0.533333333333
+I0428 14:27:21.693953 28705 solver.cpp:337] Iteration 208, Testing net (#0)
+I0428 14:27:21.777935 28705 solver.cpp:404]     Test net output #0: loss = 2.61757 (* 1 = 2.61757 loss)
+I0428 14:27:21.869389  0000 main.py:00] Test net output #1: accuracy = 0.381818181818
+I0428 14:27:22.025774 28705 solver.cpp:337] Iteration 212, Testing net (#0)
+I0428 14:27:22.110608 28705 solver.cpp:404]     Test net output #0: loss = 4.89629 (* 1 = 4.89629 loss)
+I0428 14:27:22.203486  0000 main.py:00] Test net output #1: accuracy = 0.7

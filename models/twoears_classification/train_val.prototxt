@@ -7,8 +7,8 @@ layer {
     phase: TRAIN
   }
   hdf5_data_param {
-    source: "/home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_train.txt"
-    batch_size: 16
+    source: "/home/kashefy/data/twoears/clean/feat_amsFeatures_train.txt"
+    batch_size: 128
   }
 }
 layer {
@@ -19,8 +19,8 @@ layer {
     phase: TRAIN
   }
   hdf5_data_param {
-    source: "/home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_train.txt"
-    batch_size: 16
+    source: "/home/kashefy/data/twoears/clean/labels_train.txt"
+    batch_size: 128
   }
 }
 layer {
@@ -31,8 +31,8 @@ layer {
     phase: TEST
   }
   hdf5_data_param {
-    source: "/home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_test.txt"
-    batch_size: 16
+    source: "/home/kashefy/data/twoears/clean/feat_amsFeatures_train.txt"
+    batch_size: 128
   }
 }
 layer {
@@ -43,8 +43,8 @@ layer {
     phase: TEST
   }
   hdf5_data_param {
-    source: "/home/pierre/masterarbeit/twoears/avasm/hdf5/avasm_data_test.txt"
-    batch_size: 16
+    source: "/home/kashefy/data/twoears/clean/labels_test.txt"
+    batch_size: 128
   }
 }
 layer {
@@ -61,10 +61,10 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 75
-    kernel_h: 9
-    kernel_w: 9
-    stride: 2
+    num_output: 64
+    kernel_h: 8
+    kernel_w: 6
+    stride: 1
     weight_filler {
       type: "xavier"
     }
@@ -170,10 +170,10 @@ layer {
   }
 }
 layer {
-  name: "score"
+  name: "ip3"
   type: "InnerProduct"
   bottom: "ip2"
-  top: "score"
+  top: "ip3"
   param {
     lr_mult: 1
   }
@@ -181,7 +181,7 @@ layer {
     lr_mult: 2
   }
   inner_product_param {
-    num_output: 2
+    num_output: 11
     weight_filler {
       type: "xavier"
     }
@@ -193,18 +193,7 @@ layer {
 layer {
   name: "loss"
   type: "SigmoidCrossEntropyLoss"
-  bottom: "score"
+  bottom: "ip3"
   bottom: "label"
   top: "loss"
-}
-layer {
-  name: "sigmoid"
-  type: "Sigmoid"
-  bottom: "score"
-  top: "sigmoid"
-}
-layer {
-  name: "silence"
-  type: "Silence"
-  bottom: "sigmoid"
 }

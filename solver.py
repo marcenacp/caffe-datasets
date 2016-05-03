@@ -3,7 +3,7 @@ from pycaffe.train.train_test import train_test_net_python
 from pycaffe.utils.custom_log import make_time_stamp
 
 # nets to train in net_prefixs
-net_prefixs = ["avasm"]
+net_prefixs = ["twoears_classification"]
 
 for net_prefix in net_prefixs:
     models_path = "models/" + net_prefix + "/"
@@ -23,11 +23,10 @@ for net_prefix in net_prefixs:
     # solver
     solver_name = "solver.prototxt"
     solver_path = models_path + solver_name
-    #s = caffe_pb2.SolverParameter()
 
     # solve and plot
-    train_test_net_python(solver_path, log_path, accuracy=True, debug=False)
-    print_learning_curve(net_prefix, log_path, fig_path, accuracy=True)
+    train_test_net_python(solver_path, log_path, accuracy=True, key_score='sigmoid', accuracy_metrics='macro_recall', debug=True)
+    print_learning_curve(net_prefix, log_path, fig_path, accuracy=True, format_x_axis=False)
 
     print "Logged to:", log_path
     print "Plotted to:", fig_path

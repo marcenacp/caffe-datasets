@@ -2,5 +2,4 @@
 *.wav
 *.jpg
 *.png
-.Rhistory
-
+*.pyc
