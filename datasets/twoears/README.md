@@ -1,6 +1,6 @@
 # Two!Ears - Format and prepare files for Caffe
 
-How to format Two!Ears clean sounds into HDF5 for Caffe. Initial raw data should be in `raw_hdf5`. They'll be moved to `raw_hdf5_with_angles` and then to `concatenate_hdf5`/`concatenate_hdf5/bal`/`concatenate_hdf5/split`.
+How to format Two!Ears clean sounds into HDF5 for Caffe. In the following examples, initial raw data should be in `raw_hdf5`; they'll be moved to `raw_hdf5_with_angles` and then to `concatenate_hdf5`, `concatenate_hdf5/bal` and eventually `concatenate_hdf5/split` where one finds the final data.
 
 ## Get train and test data
 
@@ -22,7 +22,7 @@ exit % close matlab
 
 Now that it's done train and test set are saved in HDF5.
 
-## Angle 0
+## Azimuth 0
 
 The data for azimuth 0 is to find under: `/home/kashefy/data/twoears/clean2`.
 
