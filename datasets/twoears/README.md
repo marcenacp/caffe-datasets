@@ -1,6 +1,6 @@
 # Two!Ears - Format and prepare files for Caffe
 
-How to format Two!Ears clean sounds into HDF5 for Caffe. In the following examples, initial raw data should be in `raw_hdf5`; they'll be moved to `raw_hdf5_with_angles` and then to `concatenate_hdf5`, `concatenate_hdf5/bal` and eventually `concatenate_hdf5/split` where one finds the final data.
+How to format Two!Ears clean sounds into HDF5 for Caffe. Initial raw data should be in `raw_hdf5`. They'll be moved to `raw_hdf5_with_angles` and then to `concatenate_hdf5`/`concatenate_hdf5/bal`/`concatenate_hdf5/split`.
 
 ## Get train and test data
 
@@ -22,7 +22,7 @@ exit % close matlab
 
 Now that it's done train and test set are saved in HDF5.
 
-## Azimuth 0
+## Angle 0
 
 The data for azimuth 0 is to find under: `/home/kashefy/data/twoears/clean2`.
 
@@ -57,11 +57,11 @@ How to balance the data:
 # activate virtualenv if applicable
 ipython # launch ipython intepreter
 from nideep.datasets.balance_hdf5 import save_balanced_class_count_hdf5
-# train set:
+# train set
 fpath_src = '/mnt/scratch/pierre/concatenate_hdf5/twoears_data_train.h5'
 fpath_dst = '/mnt/scratch/pierre/concatenate_hdf5/bal/twoears_data_train.h5' # parent directory must exist
-keys = [u'amsFeatures', u'label_scalar', u'ratemap', u'azimuth_bin', u'azimuth_deg', u'azimuth_rad'] # make sure u'classnames' and u'label' are not included
-idxs = save_balanced_class_count_hdf5(fpath_src, keys, fpath_dst, key_label='label', other_clname='general')
+keys = [u'amsFeatures', u'ratemap', u'azimuth_deg', u'azimuth_rad'] # classnames and labels are not included
+idxs = save_balanced_class_count_hdf5(fpath_src, keys, fpath_dst, key_label='azimuth_bin', other_clname='general')
 # test set
 fpath_src = '/mnt/scratch/pierre/concatenate_hdf5/twoears_data_test.h5'
 fpath_dst = '/mnt/scratch/pierre/concatenate_hdf5/bal/twoears_data_test.h5' # parent directory must exist
@@ -83,4 +83,15 @@ paths = split_hdf5(fpath_src, '/mnt/scratch/pierre/concatenate_hdf5/split')
 fpath_src = '/mnt/scratch/pierre/concatenate_hdf5/twoears_data_test.h5'
 paths = split_hdf5(fpath_src, '/mnt/scratch/pierre/concatenate_hdf5/split')
 # create a txt file in which each line contains the absolute path of each new smaller HDF5
+```
+
+## Check for correctness
+
+Open files and check for classes.
+
+```
+import h5py
+f = h5py.File("twoears_data_train.h5", "r")
+f["azimuth_deg"][0]
+f["azimuth_deg"][-1]
 ```
